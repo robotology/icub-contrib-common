@@ -51,7 +51,7 @@ endif(MSVC)
 #########################################################################
 
 if(NOT MSVC)
-    option(ICUBCONTRIB_SHARED_LIBRARY "Compile shared libraries rather than static libraries" TRUE)
+    option(ICUBCONTRIB_SHARED_LIBRARY "Compile shared libraries rather than static libraries" FALSE)
     if(ICUBCONTRIB_SHARED_LIBRARY)
         set(BUILD_SHARED_LIBS ON)
     endif()
