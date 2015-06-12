@@ -14,7 +14,7 @@ if (NOT MSVC)
         set(CMAKE_BUILD_WITH_INSTALL_RPATH FALSE)
 
        # SET(CMAKE_INSTALL_NAME_DIR "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}")
-        set(CMAKE_INSTLL_RPATH "") #don't know if need this
+        set(CMAKE_INSTALL_RPATH "") #don't know if need this
         set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 
         # the RPATH to be used when installing, but only if it's not a system directory
@@ -82,4 +82,3 @@ endif()
 # Let CMake know which configurations are the debug ones, so that it can
 # link the right library when both optimized and debug library are found
 set_property(GLOBAL PROPERTY DEBUG_CONFIGURATIONS ${ICUBCONTRIB_DEBUG_CONFIGURATIONS})
-

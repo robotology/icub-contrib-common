@@ -4,15 +4,17 @@
 
 cmake_minimum_required(VERSION 2.8.7)
 
-project(ICUBcontrib)
+project(ICUBcontrib NONE)
 
 set(YARP_REQUIRED_VERSION 2.3.60)
 find_package(YARP ${YARP_REQUIRED_VERSION} REQUIRED)
 
 list(APPEND CMAKE_MODULE_PATH ${YARP_MODULE_PATH})
 
+set(YARP_FORCE_DYNAMIC_PLUGINS TRUE CACHE INTERNAL "ICUBcontrib is always built with dynamic plugins")
+
 include(YarpInstallationHelpers)
-yarp_configure_external_installation(ICUBcontrib)
+yarp_configure_external_installation(ICUBcontrib WITH_PLUGINS)
 set(ICUBCONTRIB_MODULE_DIR share/${PROJECT_NAME}/cmake)
 
 configure_file(${CMAKE_SOURCE_DIR}/templates/ICUBcontribConfig.cmake.in
