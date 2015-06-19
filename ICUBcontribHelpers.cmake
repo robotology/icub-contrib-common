@@ -62,7 +62,7 @@ include(GNUInstallDirs)
 # PIC flag (for position independent code generation) with gcc.
 
 macro(icubcontrib_export_library target)
-  cmake_parse_arguments(${target} "VERBOSE" "DESTINATION" "INTERNAL_INCLUDE_DIRS;EXTERNAL_INCLUDE_DIRS;DEPENDS;FILES;FILES_WITH_PATH" ${ARGN})
+  cmake_parse_arguments(${target} "VERBOSE" "DESTINATION" "INTERNAL_INCLUDE_DIRS;EXTERNAL_INCLUDE_DIRS;DEPENDS;FILES;FILES_WITH_PATH;PATH_TO_EXCLUDE" ${ARGN})
 
   set(VERBOSE ${${target}_VERBOSE})
   if(VERBOSE)
