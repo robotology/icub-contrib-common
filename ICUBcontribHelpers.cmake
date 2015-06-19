@@ -73,6 +73,7 @@ macro(icubcontrib_export_library target)
     MESSAGE(STATUS "Destination: ${${target}_DESTINATION}")
     MESSAGE(STATUS "Header files: ${${target}_FILES}")
     MESSAGE(STATUS "Header files for which we keep the relative path: ${${target}_FILES_WITH_PATH}")
+    MESSAGE(STATUS "Part of the relative path to strip off: ${${target}_PATH_TO_EXCLUDE}")
     MESSAGE(STATUS "Option verbosity: ${${target}_VERBOSE}")
   endif()
 
@@ -81,6 +82,7 @@ macro(icubcontrib_export_library target)
   set(dependencies ${${target}_DEPENDS})
   set(files ${${target}_FILES})
   set(files_with_path ${${target}_FILES_WITH_PATH})
+  set(path_to_exclude ${${target}_PATH_TO_EXCLUDE})
   set(destination ${${target}_DESTINATION})
 
   ##### Append target to global list.
@@ -199,8 +201,12 @@ macro(icubcontrib_export_library target)
     endif()
    
 
+    # strip off the trailing slash
+    string(REGEX REPLACE "/+$" "" path_to_exclude ${path_to_exclude})
+
     foreach(cur_file  ${files_with_path})
         get_filename_component(file_rel_dir ${cur_file} PATH)
+        string(REPLACE "${path_to_exclude}" "" file_rel_dir ${file_rel_dir})
         install(FILES ${cur_file} DESTINATION ${destination}/${file_rel_dir} COMPONENT Development)
     endforeach()
     set_target_properties(${target} PROPERTIES
