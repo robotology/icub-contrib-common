@@ -7,7 +7,10 @@ cmake_minimum_required(VERSION 2.8.7)
 project(ICUBcontrib NONE)
 
 set(YARP_REQUIRED_VERSION 2.3.60)
-find_package(YARP ${YARP_REQUIRED_VERSION} REQUIRED)
+find_package(YARP REQUIRED)
+if(${YARP_VERSION} VERSION_LESS ${YARP_REQUIRED_VERSION})
+  message(FATAL_ERROR "YARP version ${YARP_VERSION} not sufficient, at least version ${YARP_REQUIRED_VERSION} is required.")
+endif()
 
 list(APPEND CMAKE_MODULE_PATH ${YARP_MODULE_PATH})
 
