@@ -6,7 +6,7 @@ cmake_minimum_required(VERSION 3.5)
 
 project(ICUBcontrib NONE)
 
-set(YARP_REQUIRED_VERSION 3.0.0)
+set(YARP_REQUIRED_VERSION 2.3.72)
 find_package(YARP REQUIRED)
 if(${YARP_VERSION} VERSION_LESS ${YARP_REQUIRED_VERSION})
   message(FATAL_ERROR "YARP version ${YARP_VERSION} not sufficient, at least version ${YARP_REQUIRED_VERSION} is required.")
