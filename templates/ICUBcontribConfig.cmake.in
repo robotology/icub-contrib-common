@@ -5,11 +5,9 @@
 #This file is automatically configured by CMake
 
 find_package(YARP REQUIRED QUIET)
-list(APPEND CMAKE_MODULE_PATH ${YARP_MODULE_PATH})
 
 set(YARP_FORCE_DYNAMIC_PLUGINS TRUE CACHE INTERNAL "ICUBcontrib modules are always built with dynamic plugins")
 
-include(YarpInstallationHelpers)
 yarp_configure_external_installation(ICUBcontrib NO_PATH_D)
 
 set(ICUBCONTRIB_INSTALL_PREFIX "@CMAKE_INSTALL_PREFIX@")

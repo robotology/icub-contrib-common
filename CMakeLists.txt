@@ -2,21 +2,18 @@
 # Authors: Elena Ceseracciu
 # CopyPolicy: Released under the terms of the GNU GPL v2.0.
 
-cmake_minimum_required(VERSION 2.8.7)
+cmake_minimum_required(VERSION 3.5)
 
 project(ICUBcontrib NONE)
 
-set(YARP_REQUIRED_VERSION 2.3.60)
+set(YARP_REQUIRED_VERSION 3.0.0)
 find_package(YARP REQUIRED)
 if(${YARP_VERSION} VERSION_LESS ${YARP_REQUIRED_VERSION})
   message(FATAL_ERROR "YARP version ${YARP_VERSION} not sufficient, at least version ${YARP_REQUIRED_VERSION} is required.")
 endif()
 
-list(APPEND CMAKE_MODULE_PATH ${YARP_MODULE_PATH})
-
 set(YARP_FORCE_DYNAMIC_PLUGINS TRUE CACHE INTERNAL "ICUBcontrib is always built with dynamic plugins")
 
-include(YarpInstallationHelpers)
 yarp_configure_external_installation(ICUBcontrib WITH_PLUGINS)
 set(ICUBCONTRIB_MODULE_DIR share/${PROJECT_NAME}/cmake)
 
