@@ -1,7 +1,7 @@
 icub-contrib-common
 ===================
 
-<a href="https://zenhub.com"><img src="https://raw.githubusercontent.com/ZenHubIO/support/master/zenhub-badge.png"></a>
+[![ZenHub](https://img.shields.io/badge/Shipping_faster_with-ZenHub-435198.svg)](https://zenhub.com)
 
 This is a meta-package, which allows to properly configure your
 modules/libraries so that they share the same installation prefix.
