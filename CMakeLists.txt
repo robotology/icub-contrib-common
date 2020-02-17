@@ -5,7 +5,7 @@
 cmake_minimum_required(VERSION 3.5)
 project(ICUBcontrib NONE)
 
-find_package(YARP 3.3.0 REQUIRED)
+find_package(YARP 3.3.1 REQUIRED)
 set(YARP_FORCE_DYNAMIC_PLUGINS TRUE CACHE INTERNAL "ICUBcontrib is always built with dynamic plugins")
 
 yarp_configure_external_installation(ICUBcontrib WITH_PLUGINS)
