@@ -20,3 +20,10 @@ For details about usage in your software check:
  * http://wiki.icub.org/wiki/Simple_template_for_modules_in_contrib
  * http://wiki.icub.org/wiki/Simple_template_for_libraries_in_contrib
 
+## Maintainers
+This repository is maintained by:
+
+| | |
+|:---:|:---:|
+| [<img src="https://github.com/pattacini.png" width="40">](https://github.com/pattacini) | [@pattacini](https://github.com/pattacini) |
+
