@@ -32,6 +32,7 @@ icub-contrib-common is a fairly classical CMake project, so once you install its
 
 ```sh
 git clone https://github.com/robotology/icub-contrib-common
+cd icub-contrib-common
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX=<prefix>  ..
